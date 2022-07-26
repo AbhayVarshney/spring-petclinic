@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './mvnw clean compile'
+                sh './mvnw package'
+                java -jar target/*.jar
             }
         }
     }
