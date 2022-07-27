@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'java -version'
-                sh './mvnw package'
+                sh './mvnw package -DskipTests'
             }
         }
 
