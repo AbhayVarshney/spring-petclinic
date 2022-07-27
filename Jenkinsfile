@@ -8,7 +8,6 @@ pipeline {
             steps {
                 sh 'java -version'
                 sh './mvnw package'
-                sh 'java -jar target/*.jar'
             }
         }
     }
