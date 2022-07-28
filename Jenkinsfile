@@ -12,7 +12,7 @@ pipeline {
 
         stage('Run') {
              steps {
-                 sh 'java -jar target/*.jar'
+                 sh 'java -Dserver.port=8888 -jar target/*.jar'
              }
         }
 
