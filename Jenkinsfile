@@ -13,7 +13,7 @@ pipeline {
         stage('Scan') {
              steps {
                  withSonarQubeEnv(installationName: 'sq1') {
-                     sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=loginHASH -DskipTests'                      
+                     sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -DskipTests'                      
                  }
              }
         }
