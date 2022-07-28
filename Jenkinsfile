@@ -6,14 +6,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'java -version'
-                sh './mvnw package -DskipTests'
+                sh './mvnw package sonar:sonar -DskipTests'
             }
         }
 
         stage('Scan') {
              steps {
                  withSonarQubeEnv(installationName: 'sq1') {
-                     sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -DskipTests'
+                      sh 'mvn clean install sonar:sonar -DskipTests'                     
                  }
              }
         }
