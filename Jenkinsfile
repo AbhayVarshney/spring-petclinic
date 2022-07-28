@@ -17,6 +17,12 @@ pipeline {
                  }
              }
         }
+
+        stage('Run') {
+             steps {
+                 sh 'java -jar target/*.jar'
+             }
+        }
     }
 }
 
