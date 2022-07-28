@@ -13,7 +13,7 @@ pipeline {
         stage('Scan') {
              steps {
                  withSonarQubeEnv(installationName: 'sq1') {
-                      sh 'mvn clean install sonar:sonar -DskipTests'                     
+                      sh './mvnw clean install sonar:sonar -DskipTests -Dsonar.login'                     
                  }
              }
         }
